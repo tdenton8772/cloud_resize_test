@@ -1,17 +1,17 @@
 # Your personal token from Cloud UI → Settings → Personal Tokens
 TOKEN=${SCY_CLOUD_TOKEN}
 ACCOUNT_ID=929
-CLUSTER_ID=39250
+CLUSTER_ID=39287
 API="https://api.cloud.scylladb.com"
 
 # curl -sS -H "Authorization: Bearer $TOKEN" \
 #   "$API/account/default"
 
-# curl -sS -H "Authorization: Bearer $TOKEN" \
-#   "$API/account/929/clusters" | jq
-
 curl -sS -H "Authorization: Bearer $TOKEN" \
-  "$API/account/929/cluster/39250/nodes"
+  "$API/account/929/clusters" | jq
+
+# curl -sS -H "Authorization: Bearer $TOKEN" \
+#   "$API/account/929/cluster/39250/nodes"
 
 # # 1) Get your Scylla Cloud ACCOUNT ID (tied to the token)
 # ACCOUNT_ID=$(curl -sS -H "Authorization: Bearer $TOKEN" \
